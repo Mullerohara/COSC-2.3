@@ -1,0 +1,36 @@
+class Car:
+    """
+    A class that represents a car traveling at a constant speed.
+    """
+    def __init__(self, speed: float):
+        """
+        Constructor to initialize the car's speed attribute.
+        :param speed: The constant speed of the car (in mph)
+        """
+        self.speed = speed
+
+    def calculate_distance(self, time: int) -> float:
+        """
+        Calculates the distance traveled given a specific time interval.
+        Formula: Distance = Speed * Time
+        :param time: Time spent driving (in hours)
+        :return: Distance traveled (in miles)
+        """
+        return self.speed * time
+
+
+def main():
+    # Constant data initialization matching requirements
+    constant_speed = 70.0  # Speed explicitly declared as a float
+    time_intervals = [6, 10, 15]  # Driving durations in hours (integers)
+    
+    # Instantiate the Car object
+    my_car = Car(constant_speed)
+    
+    # Calculate and display the results using structured f-strings
+    for time in time_intervals:
+        distance = my_car.calculate_distance(time)
+        print(f"In {time} hours, the car will travel {int(distance)} miles.")
+
+if __name__ == "__main__":
+    main()
